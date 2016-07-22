@@ -1,0 +1,22 @@
+<div class="container-fluid wrapper">
+  <div class="row row-offcanvas row-offcanvas-left">
+
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+      <div class="list-group">
+        <p class="list-group-item lead active">ALBUMS</p>
+        {% for album in albums %}
+          <a href="{% url 'gallery:album_detail' album.slug %}" class="list-group-item">{{album.title}}</a>
+        {% endfor %}
+      </div><!--/list-group -->
+    </div><!--/.sidebar-offcanvas-->
+
+    <div class="col-xs-12 col-sm-9">
+      <p class="pull-left visible-xs">
+        <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle Albums</button>
+      </p>
+      <div class="jumb">
+
+      </div>
+    </div><!--/.col-xs-12.col-sm-9-->
+  </div><!--/row-->
+</div><!--/.container-->

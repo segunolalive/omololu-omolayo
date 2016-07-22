@@ -1,0 +1,14 @@
+{% extends 'base3.html' %}
+{% block content %}
+  <h1>Thank you for contacting us</h1>
+  {% if messages %}
+    <div class="action_message">
+      <ul class="messages">
+          {% for message in messages %}
+          <h3{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</h3>
+          {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+{% endblock content %}

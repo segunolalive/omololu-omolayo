@@ -1,0 +1,76 @@
+body {
+
+}
+
+.top-bar{
+
+}
+
+.sidebar{
+  padding-top: 70px;
+  /*background-color: rgba(232, 232, 232, 0.5);*/
+  height: 100vh;
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto;
+
+}
+
+.albums{
+  height: 100vh;
+  position: fixed; /* Make it stick, even on scroll */
+  overflow: auto;
+
+}
+
+.albums > li{
+  border-bottom: 1px solid rgba(148, 152, 147, 0.5);
+  display: block;
+}
+
+.main {
+padding-top: 50px;
+margin: auto;
+}
+
+.photos {
+  position: relative;
+  width: 100%;
+  max-height: 470px;
+
+}
+
+.photo{
+  position: absolute;
+  height: 600px;
+  /*padding-top: 20px;
+  margin: 20px auto;*/
+  top: 0;
+  left: 0;
+  -moz-box-shadow:    2px 2px 6px 3px #ccc;
+  -o-box-shadow:    2px 2px 6px 3px #ccc;
+  -webkit-box-shadow: 2px 2px 6px 3px #ccc;
+  box-shadow:         2px 2px 6px 3px #ccc;
+
+}
+
+
+
+/*javascript styles*/
+.slide {
+  display: none;
+  height: 600px;
+}
+.active-slide {
+    display: block;
+}
+.hidden {
+  display: none;
+}
+
+.hiddenPhoto {
+  display: none !important;
+}
+
+.currentPhoto {
+  display: inline-block;
+}
