@@ -25,7 +25,7 @@ SECRET_KEY = '1xt)08hs4y%9$zh8)jv07b_zgdc)wnd^if8rw%f)ns7z&e1*%g'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['omololu.pythonanywhere.com']
 
 # email setup
 EMAIL_HOST = 'smtp.gmail.com'

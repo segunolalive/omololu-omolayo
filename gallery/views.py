@@ -100,7 +100,7 @@ def contact(request):
         form_last_name = form.cleaned_data.get('last_name')
         form_message = form.cleaned_data.get('message')
 
-        email_subject = 'New mail from %s' %(form_email)
+        email_subject = 'New mail from Visistor To Your Website'
         email_message = "user email address: %s \n fullname: %s %s \n message:\n %s" %(
             form_email,
             form_first_name,
@@ -108,7 +108,7 @@ def contact(request):
             form_message
             )
         from_email = settings.EMAIL_HOST_USER
-        recipient = ['zeusdynamic@yahoo.com'] #a list of  receipient emails
+        recipient = [DEFAULT_TO_EMAIL] #a list of  receipient emails
 
         """This method of sending mails shows every receipient the email addresses of other receipients."""
         send_mail(email_subject,

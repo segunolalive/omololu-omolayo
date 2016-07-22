@@ -1,6 +1,6 @@
 *.pyc
 __pycache__
-myvenv
+ozone
 db.sqlite3
-/static
+
 .DS_Store
