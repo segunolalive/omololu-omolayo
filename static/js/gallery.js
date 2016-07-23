@@ -24,9 +24,9 @@ var main = function(){
     var nextSlide = currentSlide.next();
     if(nextSlide.length == 0){
       nextSlide = $('.slide').first();
-    }    
+    }
     currentSlide.fadeOut(600).addClass('hiddenDiv').removeClass('active-slide');
-    nextSlide.fadeIn(600).removeClass('hiddenDiv').addClass('active-slide');
+    nextSlide.fadeIn(300).removeClass('hiddenDiv').addClass('active-slide');
   }
 
   function scrollLeft(){
@@ -36,7 +36,7 @@ var main = function(){
       prevSlide = $('.slide').last();
     }
     currentSlide.fadeOut(600).addClass('hiddenDiv').removeClass('active-slide');
-    prevSlide.fadeIn(600).removeClass('hiddenDiv').addClass('active-slide');
+    prevSlide.fadeIn(300).removeClass('hiddenDiv').addClass('active-slide');
   }
 
   //arrow keys navigation

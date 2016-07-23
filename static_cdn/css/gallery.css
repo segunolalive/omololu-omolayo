@@ -1,49 +1,105 @@
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html {
+
+}
+html,
 body {
-
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+  min-height: 100%;
 }
-
-.top-bar{
-
-}
-
-.sidebar{
+body {
   padding-top: 70px;
-  /*background-color: rgba(232, 232, 232, 0.5);*/
-  height: 100vh;
-  position: fixed; /* Make it stick, even on scroll */
-  overflow: auto;
+}
+
+footer {
+  padding: 30px 0 0 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+  text-align: center;
 
 }
 
-.albums{
-  height: 100vh;
-  position: fixed; /* Make it stick, even on scroll */
-  overflow: auto;
-
+.wrapper {
+  margin-bottom: 50px;
+}
+.jumbotron {
+  background-color: #eee !important;
+  min-height: 50vh;
+}
+.jumb {
+  padding-top: 0px;
+  padding-bottom: 1px;
+  margin-bottom: 1px;
+  color: inherit;
+  background-color: #fff;
 }
 
-.albums > li{
-  border-bottom: 1px solid rgba(148, 152, 147, 0.5);
-  display: block;
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
 }
 
-.main {
-padding-top: 50px;
-margin: auto;
-}
+
 
 .photos {
   position: relative;
   width: 100%;
-  max-height: 470px;
+  margin-bottom: 60px;
 
 }
 
 .photo{
-  position: absolute;
-  height: 600px;
-  /*padding-top: 20px;
-  margin: 20px auto;*/
+  position: absolute;;
+  max-height: 600px;
+
+  margin: auto;
   top: 0;
   left: 0;
   -moz-box-shadow:    2px 2px 6px 3px #ccc;
@@ -54,23 +110,14 @@ margin: auto;
 }
 
 
-
 /*javascript styles*/
 .slide {
-  display: none;
-  height: 600px;
+  /*display: none;*/
+  height: 550px;
 }
 .active-slide {
-    display: block;
+  display: block;
 }
-.hidden {
+.hiddenDiv {
   display: none;
-}
-
-.hiddenPhoto {
-  display: none !important;
-}
-
-.currentPhoto {
-  display: inline-block;
 }

@@ -2,5 +2,9 @@
 __pycache__
 ozone
 db.sqlite3
+bootstrap.min.css
+collapse.js
+bootstrap.min.js
+jquery-1.11.3.min.js
 
 .DS_Store
