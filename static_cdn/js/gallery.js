@@ -1,19 +1,5 @@
 var main = function(){
-
-  //stub function
-/*  function empty(){
-    return;
-  }
-
-  var timeoutID;
-  function slightDelay() {
-    timeoutID = window.setTimeout(empty, 5000);
-  }
-  function clearDelay() {
-    window.clearTimeout(timeoutID);
-  }  */
-
-  var slide =  $('.slide');
+  var slide =  $('.photos' > '.slide');
   slide.addClass('hiddenDiv');
   var firstSlide = slide.first();
   firstSlide.removeClass('hiddenDiv');
@@ -26,7 +12,7 @@ var main = function(){
       nextSlide = $('.slide').first();
     }
     currentSlide.fadeOut(600).addClass('hiddenDiv').removeClass('active-slide');
-    nextSlide.fadeIn(300).removeClass('hiddenDiv').addClass('active-slide');
+    nextSlide.fadeIn(600).removeClass('hiddenDiv').addClass('active-slide');
   }
 
   function scrollLeft(){
@@ -36,7 +22,7 @@ var main = function(){
       prevSlide = $('.slide').last();
     }
     currentSlide.fadeOut(600).addClass('hiddenDiv').removeClass('active-slide');
-    prevSlide.fadeIn(300).removeClass('hiddenDiv').addClass('active-slide');
+    prevSlide.fadeIn(600).removeClass('hiddenDiv').addClass('active-slide');
   }
 
   //arrow keys navigation
@@ -59,22 +45,38 @@ var main = function(){
       scrollRight();
      })
 
-     //slide functionality
-    $(document).on("swipeleft", function(event){
-      scrollLeft();
-    })
-
-    $(document).on("swipeRight", function(event){
-      scrollRight();
-    })
-
-
     // toggle sidebar in small screen
     $(document).ready(function () {
       $('[data-toggle="offcanvas"]').click(function () {
         $('.row-offcanvas').toggleClass('active')
       });
     });
+
+    // prevent right-clicking
+    var message = 'Image is Copyright Protected';
+    function clickImg(){
+      if (event.button == 2){
+        alert(message);
+        return false;
+      }
+    }
+    function clickImg2(event){
+      if (document.layers || document.getElementById && !document.all){
+        if (event.which == 2 || event.which == 3){
+          alert(message);
+          return false;
+        }
+      }
+    }
+    if (document.layers){
+      document.captureEvents(Event.MOUSEDOWN){
+        document.onmousedown = clickImg2;
+      }
+    else if (document.all && document.getElementById) {
+      document.onmousedown = clickImg;
+    }
+    document.oncontextmenu = new Function("alert(message); return false");
+    }
 }
 
 $(document).ready(main);
