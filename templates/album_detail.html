@@ -11,7 +11,7 @@
   <div class="photos" >
     {% for photo in pictures.photo_set.all %}
     <div class="slide">
-      <div class="slide-copy col-xs-10 col-xs-offset-1">
+      <div class="slide-copy col-xs-10 col-xs-offset-1" oncontextmenu="return false;">
         <img src="{{photo.image.url}}" alt="{{photo.image.name}}" class="photo img-responsive thumbnail"/>
       </div>
     </div>

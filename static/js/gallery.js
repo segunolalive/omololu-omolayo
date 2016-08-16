@@ -52,10 +52,6 @@ var main = function(){
       });
     });
 
-    // prevent right-clicking
-  $('body').on('contextmenu', 'img', function(event){
-    return false;
-  });
 
   //owl-carousel
   $(document).ready(function() {

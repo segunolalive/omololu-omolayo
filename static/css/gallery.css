@@ -14,20 +14,21 @@ body {
   padding-top: 70px;
 }
 
-footer {
-  padding: 30px 0 0 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-  text-align: center;
-
+/*navigation bar*/
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 10px 5px;
 }
 
-.navigation {
-  padding-right: 60px;
+.nav>li>a>span {
+  display: inline-block;
+}
+
+@media screen and (max-width: 767px) {
+  .nav>li>a>span {
+    display:none;
+  }
 }
 
 .navbar-brand {
@@ -39,6 +40,7 @@ footer {
     border-bottom: none;
 }
 
+/*side-menu for albums*/
 @media screen and (max-width: 767px) {
   .menu > p {
     padding-left: 20px;
@@ -56,9 +58,25 @@ footer {
   color: black;
 }
 
-.wrapper {
-  margin-bottom: 60px;
+.work-item{
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #fff;
+  text-decoration: none;
 }
+
+.work-item > a,
+a.work-item:hover,
+button.work-item:hover,
+a.work-item:focus,
+button.work-item:focus {
+  color: #555;
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+
 
 /*
  * Off Canvas
@@ -105,29 +123,8 @@ footer {
   }
 }
 
-.work{
 
-}
-
-.work-item{
-  position: relative;
-  display: block;
-  padding: 10px 15px;
-  margin-bottom: -1px;
-  background-color: #fff;
-  text-decoration: none;
-}
-
-.work-item > a,
-a.work-item:hover,
-button.work-item:hover,
-a.work-item:focus,
-button.work-item:focus {
-  color: #555;
-  text-decoration: none;
-  background-color: #f5f5f5;
-}
-
+/*album detail page*/
 .photos {
   position: relative;
   width: 100%;
@@ -155,6 +152,68 @@ button.work-item:focus {
 
 }
 
+/* homepage background */
+.home {
+  height: 100vh;
+  background-image: url('../../media/background_for_homepage.jpg');
+  background-repeat: no-repeat;
+
+  -webkit-background-size: contain;
+     -moz-background-size: contain;
+       -o-background-size: contain;
+          background-size: contain;
+}
+
+/*miscellaneous */
+.wrapper {
+  margin-bottom: 60px;
+}
+
+/*page footer*/
+footer {
+  padding: 30px 0 0 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+  text-align: center;
+
+}
+
+/*Links page*/
+.links {
+  margin-top: 30px;
+  height: 100%;
+}
+
+.links > ul {
+  list-style-type: none;
+}
+
+.links > ul > li > a{
+  display: block;
+  padding: 5px;
+  margin: 5px;
+  font-size: 1.15em;
+  text-decoration: none;
+}
+
+.links > h1 {
+  color: #aaa;
+  font-size: 7em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.links > h3 {
+  color: #aaa;
+  font-size: 3em;
+  font-weight: 700;
+  text-align: center;
+}
+
 
 /*javascript styles*/
 .slide {
@@ -165,16 +224,4 @@ button.work-item:focus {
 }
 .hiddenDiv {
   display: none;
-}
-
-/* homepage background */
-.home {
-  height: 100vh;
-  background-image: url('../images/photography.jpg');
-  background-repeat: no-repeat;
-
-  -webkit-background-size: contain;
-     -moz-background-size: contain;
-       -o-background-size: contain;
-          background-size: contain;
 }

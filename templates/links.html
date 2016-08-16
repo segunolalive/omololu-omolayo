@@ -1,0 +1,16 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+<div class="links">
+  {% if links_list %}
+    <ul>
+    {% for link in links_list %}
+      <li><a href="{{link.url}}" target="_blank">{{link.short_decription}}</a></li>
+    {% endfor %}
+    </ul>
+  {% else %}
+  <h1>Sorry!</h1>
+    <h3>there are no links avaiable at this time. Please check back soon.</h3>
+  {% endif %}
+</div>
+{% endblock content %}

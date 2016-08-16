@@ -1,28 +1,21 @@
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Q
-from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render, get_object_or_404, get_list_or_404, redirect
-from django.utils import timezone
+from django.shortcuts import render, get_object_or_404, redirect
 
 from datetime import datetime
 
 from .forms import ContactForm
 
-from .models import Album, Photo, AlbumGroup
-from urllib.parse import quote_plus
-
+from .models import Album, AlbumGroup, Link, Photo
 
 # Create your views here.
 
 #gallery views
 def home(request):
     albums = Album.objects.all()
-    currentYear = datetime.now().year
     album_groups = AlbumGroup.objects.all()
-
+    currentYear = datetime.now().year
 
     context = {
     "albums": albums,
@@ -41,8 +34,8 @@ def album_detail(request, slug):
 
     context = {"albums": albums,
                "pictures": album_pictures,
-               "year": currentYear,
                "album_groups": album_groups,
+               "year": currentYear,
                }
     return render(request,"album_detail.html", context)
 
@@ -88,3 +81,18 @@ def contact(request):
 def thanks(request):
     currentYear = datetime.now().year
     return render(request, "thank_you.html", {"year": currentYear,})
+
+def links_view(request):
+    links_list = Link.objects.all()
+    albums = Album.objects.all()
+    album_groups = AlbumGroup.objects.all()
+    currentYear = datetime.now().year
+
+    context= {
+    "links_list": links_list,
+    "albums": albums,
+    "album_groups": album_groups,
+    "year": currentYear,
+    }
+
+    return render(request, "links.html", context)

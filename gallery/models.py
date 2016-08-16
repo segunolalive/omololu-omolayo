@@ -5,7 +5,38 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from django.utils.text import slugify
 
+import os.path
+
 # Create your models here.
+
+
+class Link(models.Model):
+    url = models.URLField()
+    short_decription = models.CharField(max_length = 120)
+
+    def __str__(self):
+        return self.url
+    def __unicode__(self):
+        return self.url
+
+# background
+class Background(models.Model):
+    image = models.image = models.ImageField()
+
+    def save(self):
+        if Background.objects.all():
+            old_background = Background.objects.get()
+            old_background.delete()
+        background_url = 'media_cdn/background_for_homepage.jpg'
+        if os.path.exists(background_url):
+            os.remove(background_url)
+        self.image.name = 'background_for_homepage.jpg'
+        super(Background, self).save()
+
+    def __str__(self):
+        return self.image.name
+    def __unicode__(self):
+        return self.image.name
 
 #gallery models here
 class AlbumGroup(models.Model):
@@ -20,7 +51,6 @@ class Album(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
     album_group = models.ForeignKey('AlbumGroup', on_delete = models.CASCADE, default="unnamed")
-    # album_group = models.CharField(max_length=120)
 
     def __str__(self):
         return self.title

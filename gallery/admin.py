@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Album, Photo, AlbumGroup
+from .models import Album, Photo, AlbumGroup, Background, Link
 
 # Register your models here.
 class PhotoInline(admin.TabularInline):
@@ -36,3 +36,5 @@ class AlbumGroupModelAdmin(admin.ModelAdmin):
 
 admin.site.register(Album, AlbumModelAdmin)
 admin.site.register(AlbumGroup, AlbumGroupModelAdmin)
+admin.site.register(Background)
+admin.site.register(Link)
