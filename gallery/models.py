@@ -54,7 +54,7 @@ class AlbumGroup(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=120)
     slug = models.SlugField(unique=True)
-    album_group = models.ForeignKey('AlbumGroup', on_delete = models.CASCADE, default="unnamed")
+    album_group = models.ForeignKey('AlbumGroup', on_delete = models.CASCADE)
 
     def __str__(self):
         return self.title
