@@ -5,6 +5,8 @@ from django.db.models.signals import pre_save
 from django.utils import timezone
 from django.utils.text import slugify
 
+from lolu import settings
+
 import os.path
 
 # Create your models here.
@@ -27,8 +29,10 @@ class Background(models.Model):
         if Background.objects.all():
             old_background = Background.objects.get()
             old_background.delete()
-        background_url = 'media_cdn/background_for_homepage.jpg'
-        if os.path.exists(background_url):
+        project_root = settings.BASE_DIR
+        media_location = '/media_cdn/background_for_homepage.jpg'
+        background_url = project_root + media_location
+        if(os.path.exists(background_url)):
             os.remove(background_url)
         self.image.name = 'background_for_homepage.jpg'
         super(Background, self).save()
