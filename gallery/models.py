@@ -23,7 +23,7 @@ class Link(models.Model):
 
 # background
 class Background(models.Model):
-    image = models.image = models.ImageField()
+    image = models.ImageField()
 
     def save(self):
         if Background.objects.all():
